@@ -71,22 +71,27 @@ canvas.fillColor = lightGrey
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
 //move the origin 375 pixels up
-canvas.translate(to: Point(x: 0, y: 420))
+canvas.translate(to: Point(x: 0, y: 415))
 
 ////draw axes to check where origin is
 //canvas.drawAxes()
 
-for _ in 1...19 {
+for i in stride(from: 100, through: 10, by: -5) {
+   
     //write 'undertones'
-    canvas.drawText(message: "undertones", at: Point(x: 20, y: -50), size: 67, kerning: 0)
+    canvas.drawText(message: "undertones", at: Point(x: 15, y: -40), size: 67, kerning: 0)
     
     //rotate the origin
-    canvas.rotate(by: -4.7)
+    canvas.rotate(by: -4.755)
     
 //    //draw axes to check the rotation
 //    canvas.drawAxes()
     
-
+    //create the text color
+    //make the colour lighten as it is rotated
+    canvas.textColor = Color(hue: 100, saturation: 0, brightness: 0, alpha: i)
+    
+ 
 }
 /*:
  ## Use Source Control
